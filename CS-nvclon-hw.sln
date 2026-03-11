@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "homework_1", "homework_1", "{B3B1CB6E-1CA8-F05B-1636-F3289964142A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calc", "homework_1\calc\calc.csproj", "{59CD2B44-BFEE-3D87-5ED1-2D1D562360D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59CD2B44-BFEE-3D87-5ED1-2D1D562360D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CD2B44-BFEE-3D87-5ED1-2D1D562360D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CD2B44-BFEE-3D87-5ED1-2D1D562360D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CD2B44-BFEE-3D87-5ED1-2D1D562360D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59CD2B44-BFEE-3D87-5ED1-2D1D562360D1} = {B3B1CB6E-1CA8-F05B-1636-F3289964142A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15640D54-B7F9-4F8A-8871-49406C668885}
+	EndGlobalSection
+EndGlobal
