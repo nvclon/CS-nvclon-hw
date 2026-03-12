@@ -1,51 +1,67 @@
 ﻿class Calculator {
+    static string ReadAndCheck(string prompt) {
+        Console.Write(prompt);
+        string? input = Console.ReadLine();
+
+        if (input == "!") {
+            Environment.Exit(0);
+        }
+
+        return input ?? string.Empty;
+    }
+
     static void Main() {
-        Console.Write("Первое число: ");
-        double num1;
-        while (!double.TryParse(Console.ReadLine(), out num1)) {
-            Console.Write("Ошибка. Введите число: ");
-        }
+        while (true) {
+            double num1 = 0;
+            double num2 = 0;
+            string operation = "";
 
-        Console.Write("Второе число: ");
-        double num2;
-        while (!double.TryParse(Console.ReadLine(), out num2)) {
-            Console.Write("Ошибка. Введите число: ");
-        }
-
-        Console.WriteLine("Теперь операция: +, -, *, /");
-        string? operation = Console.ReadLine();
-
-        if (string.IsNullOrWhiteSpace(operation)) {
-            Console.WriteLine("Неверная операция!");
-            return;
-        }
-
-        double result = 0;
-        switch (operation)
-        {
-            case "+":
-                result = num1 + num2;
-                break;
-            case "-":
-                result = num1 - num2;
-                break;
-            case "*":
-                result = num1 * num2;
-                break;
-            case "/":
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    Console.WriteLine("Undefined!");
-                    return;
+            while (true) {
+                string input = ReadAndCheck("Первое число: ");
+                if (double.TryParse(input, out num1)) {
+                    break;
                 }
-                break;
-            default:
-                Console.WriteLine("Неверная операция!");
-                return;
+                Console.WriteLine("Ошибка. Введите число или ! для выхода.");
+            }
+
+            while (true) {
+                string input = ReadAndCheck("Второе число: ");
+                if (double.TryParse(input, out num2)) {
+                    break;
+                }
+                Console.WriteLine("Ошибка. Введите число или ! для выхода.");
+            }
+
+            while (true) {
+                operation = ReadAndCheck("Операция (+, -, *, /): ");
+                if (operation == "+" || operation == "-" || operation == "*" || operation == "/") {
+                    break;
+                }
+                Console.WriteLine("Ошибка. Введите +, -, *, / или ! для выхода.");
+            }
+
+            double result = 0;
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 == 0) {
+                        Console.WriteLine("Undefined!");
+                        continue;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+
+            Console.WriteLine("Результат: " + result);
+            Console.WriteLine();
         }
-        Console.WriteLine("Результат: " + result);
-        Console.WriteLine("Нажмите Enter, чтобы выйти...");
-        Console.ReadLine();
     }
 }
